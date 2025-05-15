@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit Converter</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <div class="container">
+    <button class="dark-toggle-btn" id="darkModeBtn">Dark Mode</button>
+    <h2>Week 1 Assignment:<br>Unit Converter</h2>
+
+    <!-- Temperature Converter Section -->
+    <div class="converter-section" id="tempSection">
+      <h3>Convert Temperature</h3>
+      <label for="celsiusInput">Celsius:</label>
+      <input type="text" id="celsiusInput" />
+      <label for="fahrenheitInput">Fahrenheit:</label>
+      <input type="text" id="fahrenheitInput" />
+      <button class="convert-btn" onclick="convertTemperature('CtoF')">Celsius to Fahrenheit</button>
+      <button class="convert-btn" onclick="convertTemperature('FtoC')">Fahrenheit to Celsius</button>
+      <div class="result" id="tempResult"></div>
+    </div>
+
+    <!-- Distance Converter Section -->
+    <div class="converter-section" id="distanceSection">
+      <h3>Convert Distance</h3>
+      <label for="kmInput">Kilometers:</label>
+      <input type="text" id="kmInput" />
+      <label for="miInput">Miles:</label>
+      <input type="text" id="miInput" />
+      <button class="convert-btn" onclick="convertDistance('kmToMi')">Kilometers to Miles</button>
+      <button class="convert-btn" onclick="convertDistance('miToKm')">Miles to Kilometers</button>
+      <div class="result" id="distanceResult"></div>
+    </div>
+
+    <!-- Weight Converter Section -->
+    <div class="converter-section" id="weightSection">
+      <h3>Convert Weight</h3>
+      <label for="kgInput">Kilograms:</label>
+      <input type="text" id="kgInput" />
+      <label for="lbInput">Pounds:</label>
+      <input type="text" id="lbInput" />
+      <button class="convert-btn" onclick="convertWeight('kgToLb')">Kilograms to Pounds</button>
+      <button class="convert-btn" onclick="convertWeight('lbToKg')">Pounds to Kilograms</button>
+      <div class="result" id="weightResult"></div>
+    </div>
+  </div>
+  <script src="util.js"></script> 
+  <script src="converter.js"></script>
