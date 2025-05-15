@@ -1,3 +1,10 @@
+/**
+ * Accepts one value and checks if the provided value is null or undefined.
+ * If it is null or undefined, calls showErrorBox vunction and returns true,
+ * else returns false.
+ * @param {*} value - The value to check.
+ * @returns {boolean} True if value is null or undefined, otherwise false.
+ */
 function checkForNull(value) {
   if (value === null || value === undefined) {
     showErrorBox("No value entered, please enter a numeric value");
@@ -5,6 +12,15 @@ function checkForNull(value) {
   }
   return false;
 }
+
+/**
+ * Validates if the provided value is numeric and finite.  If it is, 
+ * returns true, else calls addClassToElement and showErrorBox functions 
+ * which will highlight to user that their input is invalid.
+ * @param {*} value - The value to validate.
+ * @param {HTMLElement} element - The input element to mark as error.
+ * @returns {boolean} True if value is numeric and finite, otherwise false.
+ */
 function validateNumeric(value, element) {
   if (!isNaN(value) && isFinite(value)) {
     return true;
@@ -14,12 +30,25 @@ function validateNumeric(value, element) {
     return false;
   }
 }
+
+/**
+ * Generic function used to add the CSS "error" class to the given 
+ * element.
+ * @param {HTMLElement} element - The element to add the error class to.
+ */
 function addClassToElement(element) {
   if (element && element.classList) {
     element.classList.add("error");
   }
 }
-function showErrorBox(message) {  // Create the box element
+
+/**
+ * Accepts single parameter which is intended to be text to be displayed 
+ * in a temporaily displayed error box.  It will display for 4 seconds then 
+ * fade out.
+ * @param {string} message - The message to display in the error box.
+ */
+function showErrorBox(message) {
   const box = document.createElement('div');
   box.textContent = message;
   box.style.position = 'fixed';
@@ -44,14 +73,18 @@ function showErrorBox(message) {  // Create the box element
     }, 1000); // Wait for fade out transition
   }, 4000);
 }
-// Enable dark mode by default on page load
+/**
+ * Enables dark mode by default on page load
+ */
 document.body.classList.add('dark-mode');
 const darkModeBtn = document.getElementById('darkModeBtn');
 darkModeBtn.textContent = 'Light Mode';
 darkModeBtn.style.background = '#fff';
 darkModeBtn.style.color = '#000';
 
-// Dark mode toggle
+/**
+ * Dark mode toggle on button click
+ */
 darkModeBtn.addEventListener('click', function() {
     document.body.classList.toggle('dark-mode');
     if (document.body.classList.contains('dark-mode')) {
