@@ -6,3 +6,6 @@ Simple unit converter web application created using basic HTML, CSS, and Javascr
 Installation / Setup
 
 To run this you'll just need to clone this repo, run it using a web server, and access the page by accessing index.htm.
+
+
+Video Walkthrough link: https://www.youtube.com/watch?v=wv8xHhsJqeY
