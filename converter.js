@@ -1,26 +1,27 @@
 // Temperature conversion logic
 function convertTemperature(direction) {
-    const celsiusInput = document.getElementById('celsiusInput');
-    const fahrenheitInput = document.getElementById('fahrenheitInput');
-    celsiusInput.classList.remove('error');
-    fahrenheitInput.classList.remove('error');
-    let value, result;
-    if (direction === 'CtoF') {
+    const celsiusInput = document.getElementById('celsiusInput');  // Retrives value from Celsius input field
+    const fahrenheitInput = document.getElementById('fahrenheitInput');  // Retrives value from Fahrenheit input field
+    celsiusInput.classList.remove('error');  // Clears error class from element if it exists
+    fahrenheitInput.classList.remove('error');  // Clears error class from element if it exists
+    let value, result;  // Declare variables for value and result
+    if (direction === 'CtoF') {  // If converting from Celsius to Fahrenheit, starts here
         value = celsiusInput.value;
-        if (value.trim() === "") {
+        if (value.trim() === "") {  // Checks if celsius field is empty.  If it is, add error class.
             addClassToElement(celsiusInput);
             showErrorBox("No value entered, please enter a numeric value");
             fahrenheitInput.value = "";
             return;
         }
         if (!validateNumeric(value, celsiusInput)) {
-            fahrenheitInput.value = "";
+            fahrenheitInput.value = "";  // Checks if farenheit field is empty.  If it is, add error class.
             return;
         }
         // Celsius to Fahrenheit calculation
         result = parseFloat(value) * 9 / 5 + 32;
         fahrenheitInput.value = result.toFixed(2);
-    } else {
+    } else {  // If not converting from Celsius to Fahrenheit, then assume we are converting Fahrenheit to 
+              // Celsius and follow similar steps as CtoF
         value = fahrenheitInput.value;
         if (value.trim() === "") {
             addClassToElement(fahrenheitInput);
@@ -38,7 +39,7 @@ function convertTemperature(direction) {
     }
 }
 
-// Distance conversion logic
+// Distance conversion logic, similar functionality to temperature conversion
 function convertDistance(direction) {
     const kmInput = document.getElementById('kmInput');
     const miInput = document.getElementById('miInput');
@@ -78,7 +79,7 @@ function convertDistance(direction) {
     }
 }
 
-// Weight conversion logic
+// Weight conversion logic, similar functionality to temperature conversion
 function convertWeight(direction) {
     const kgInput = document.getElementById('kgInput');
     const lbInput = document.getElementById('lbInput');
